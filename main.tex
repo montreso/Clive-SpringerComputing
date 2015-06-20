@@ -1139,14 +1139,14 @@ upload.
 
 In order to address these issues some recent research works propose to use an
 hybrid architecture combining Content Delivery Networks (CDN) and
-P2P overlays~\cite{ZhiHui_Lu,eue}. Most of these works are focused on
+P2P overlays~\cite{ZhiHui_Lu,eue,Roverso_smoothcache}. Most of these works are focused on
 reducing the use of CDN servers via utilization of P2P available resources
 whenever it is possible. This kind of infrastructures is similar with the baseline
 model considered in this paper. Instead we propose an enhanced
 architecture that allows to regulate the amount of upload bandwidth in the
 swarm via the utilization of additional cloud resources.
 
-The most relevant work with respect to ours is LiveSky, developed by Yin et
+One of the most relevant works with respect to ours is LiveSky, developed by Yin et
 al.~\cite{liveSky}. The authors proposed a commercial deployment of the hybrid
 architecture, addressing several key challenges,
 including dynamic resource scaling while guaranteeing stream quality. However,
@@ -1154,12 +1154,12 @@ while the authors consider redirection of the users according to available
 upload resources, we propose an approach for managing the amount of available
 upload bandwidth via swarm feedback processing.
 
-One more possible approach to increase the upload capacity is to use
-helpers~\cite{Wang:enchancing,Zhang:scaling}. The helper role can be played by
-{\em idle}~\cite{Wang:role} or {\em restricted}~\cite{Kumar2006} users. Idle
-users are peers with spare upload capacity that are not interested in any
-particular data, while restricted users are users with limited rights to use
-the network service. 
+%One more possible approach to increase the upload capacity is to use
+%helpers~\cite{Wang:enchancing,Zhang:scaling}. The helper role can be played by
+%{\em idle}~\cite{Wang:role} or {\em restricted}~\cite{Kumar2006} users. Idle
+%users are peers with spare upload capacity that are not interested in any
+%particular data, while restricted users are users with limited rights to use
+%the network service. 
 
 Nowadays, exploiting dedicated cloud servers to accelerate content distribution has become a very popular solution~\cite{CloudAngel,angelcast,budget}. 
 In these systems, the role of the cloud servers is to cache and forward content to other peers. 
@@ -1199,7 +1199,7 @@ peers in the network.
 
 Self-configuration is the process of configuring components and
 protocols autonomously according to specified goals, e.g., reliability and
-availability~\cite{loop,self,tman,kavalionak:iwsos12}. A relevant example of a
+availability~\cite{amoretti_autonomous,self,tman,kavalionak:iwsos12}. A relevant example of a
 self-configuration mechanism is proposed by Kavalionak and
 Montresor~\cite{kavalionak:iwsos12} that considers a replicated service on top of
 a mixed P2P and cloud system. This protocol is able to self-regulate the
@@ -1236,293 +1236,295 @@ point of view of the source, the interface remain the same: content is
 originally pushed to S3 and from there is replicated across geographically
 dispersed data centers.
 
-\begin{thebibliography}{5}
+%\begin{thebibliography}{5}
+%
+%\bibitem{roverso2012smoothcache}
+%Roverso, R. and El-Ansary, S. and Haridi, S.,
+%\newblock {SmoothCache}: {HTTP}-Live Streaming Goes Peer-to-Peer,
+%\newblock \emph{Proc. of NETWORKING'12, 29--43, 2012, Springer.}
+%
+%\bibitem{ZhiHui_Lu}
+%Lu, Z.H. and Gao, X.H. and Huang, S.J. and Huang, Y.,
+%\newblock Scalable and reliable live streaming service through coordinating {CDN} and {P2P},
+%\newblock \emph{Proc. of ICPADS'11, 581--588, 2011, IEEE.}
+%
+%\bibitem{eue}
+%Hu, C. and Chen, M. and Xing, C. and Xu, B.,
+%\newblock {EUE} principle of resource scheduling for live streaming systems underlying {CDN-P2P} hybrid architecture,
+%\newblock \emph{Peer-to-Peer Networking and Applications, 5(4), 1--11, 2012, Springer.}
+%
+%\bibitem{liveSky}
+%Yin, Hao and Liu, Xuening and Zhan, Tongyu and Sekar, Vyas and Qiu, Feng and Lin, Chuang and Zhang, Hui and Li, Bo,
+%\newblock Design and deployment of a hybrid {CDN-P2P} system for live video streaming: experiences with {LiveSky},
+%\newblock \emph{Proc. of Multimedia'09, 25--34, 2009, ACM.}
+%
+%\bibitem{self}
+%Babaoglu, O. and Jelasity, M.,
+%\newblock Self-* properties through gossiping,
+%\newblock \emph{Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 366(1881), 3747--3757, 2008, The Royal Society.}
+%
+%\bibitem{kavalionak:iwsos12}
+%Kavalionak, H. and Montresor, A,
+%\newblock {P2P} and Cloud: A Marriage of Convenience for Replica Management,
+%\newblock \emph{Proc. of IWSOS'12, 60--71, 2012, Springer.}
+%
+%\bibitem{tman}
+%Jelasity, M. and Montresor, A. and Babaoglu, O.,
+%\newblock {T-Man}: Gossip-based fast overlay topology construction,
+%\newblock \emph{Computer Networks, 53(13), 2321--2339, 2009, Elsevier.}
+%
+%\bibitem{loop}
+%Kephart, J.O. and Chess, D.M.,
+%\newblock The vision of autonomic computing,
+%\newblock \emph{Computer, 36(1), 41--50, 2003, IEEE.}
+%
+%\bibitem{gossipestimation}
+%Haridasan, M. and van Renesse, R.,
+%\newblock Gossip-based distribution estimation in peer-to-peer networks,
+%\newblock \emph{Proc. of IPTPS'08, 2008, USENIX.}
+%
+%\bibitem{adam2}
+%Sacha, J. and Napper, J. and Stratan, C. and Pierre, G.,
+%\newblock Adam2: Reliable distribution estimation in decentralised environments,
+%\newblock \emph{Proc. of ICDCS'10, 697--707, 2010, IEEE.}
+%
+%\bibitem{mobilecloud}
+%Jin, X. and Kwok, Y.,
+%\newblock Cloud Assisted {P2P} Media Streaming for Bandwidth Constrained Mobile Subscribers,
+%\newblock \emph{Proc. of IPDPS'10, 800--805, 2010, IEEE.}
+%
+%\bibitem{Kumar2006}
+%Kumar, R. and Ross, K.W.,
+%\newblock Optimal peer-assisted file distribution: Single and multi-class problems,
+%\newblock \emph{Proc. of HOTWEB'06, 2006, IEEE.}
+%
+%\bibitem{Zhang:scaling}
+%Zhang, H. and Wang, J. and Chen, M. and Ramchandran, K.,
+%\newblock Scaling peer-to-peer video-on-demand systems using helpers,
+%\newblock \emph{Proc. of ICIP'09, 3053--3056, 2009, IEEE.}
+%
+%\bibitem{Wang:role}
+%Wang, J. and Yeo, C. and Prabhakaran, V. and Ramchandran, K.,
+%\newblock On the role of helpers in peer-to-peer file download systems: Design, analysis and simulation,
+%\newblock \emph{Proc. of IPTPS'07, 2007.}
+%
+%\bibitem{Wang:enchancing}
+%Wang, J. and Ramchandran, K.,
+%\newblock Enhancing peer-to-peer live multicast quality using helpers,
+%\newblock \emph{Proc. of ICIP'08, 2300--2303, 2008, IEEE.}
+%
+%\bibitem{MundingerWW08}
+%Mundinger, J. and Weber, R. and Weiss, G.,
+%\newblock Optimal scheduling of peer-to-peer file dissemination,
+%\newblock \emph{Journal of Scheduling, 11(2), 105--120, 2008, Springer.}
+%
+%\bibitem{HuangKR10},
+%Huang, F. and Khan, M. and Ravindran, B.,
+%\newblock On minimizing average end-to-end delay in {P2P} live streaming systems,
+%\newblock \emph{Principles of Distributed Systems, 459--474, 2010, Springer.}
+%
+%\bibitem{EzovskiTA09}
+%Ezovski, G.M. and Tang, A. and Andrew, L.L.H.,
+%\newblock Minimizing average finish time in {P2P} networks,
+%\newblock {Proc. of INFOCOM'09, 594--602, 2009, IEEE.}
+%
+%\bibitem{CloudAngel}
+%Sweha, R. and Ishakian, V. and Bestavros, A.,
+%\newblock Angels in the cloud: A peer-assisted bulk-synchronous content distribution service,
+%\newblock \emph{Proc. of CLOUD'11, 97--104, 2011, IEEE.}
+%
+%\bibitem{Kumar:MDT}
+%Kumar, R. and Ross, K.W.,
+%\newblock Peer-assisted file distribution: The minimum distribution time,
+%\newblock \emph{Proc. of HOTWEB'06, 1--11, 2006, IEEE.}
+%
+%\bibitem{cloudmedia}
+%Wu, Y. and Wu, C. and Li, B. and Qiu, X. and Lau, F.C.M.,
+%\newblock Cloudmedia: When cloud on demand meets video on demand,
+%\newblock \emph{Proc. of ICDCS'11, 268--277, 2011, IEEE.}
+%
+%\bibitem{cloudcast}
+%Montresor, A. and Abeni, L.,
+%\newblock Cloudy Weather for {P2P}, with a Chance of Gossip,
+%\newblock \emph{Proc. of P2P'11, 250--259, 2011, IEEE.}
+%
+%\bibitem{challenge}
+%Yiu, W.P.K. and Jin, X. and Chan, S.H.G.,
+%\newblock Challenges and approaches in large-scale {P2P} media streaming,
+%\newblock \emph{MultiMedia, 14(2), 50--59, 2007, IEEE.}
+%
+%\bibitem{aggregation},
+%Jelasity, M. and Montresor, A. and Babaoglu, O.,
+%\newblock Gossip-based aggregation in large dynamic networks,
+%\newblock \emph{ACM Transactions on Computer Systems (TOCS), 23(3), 219--252, 2005, ACM.}
+%
+%\bibitem{p2p2009}
+%Montresor, A. and Ghodsi, A.,
+%\newblock Towards robust peer counting,
+%\newblock \emph{Proc. of P2P'09, 143--146, 2009, IEEE.}
+%
+%\bibitem{kompics}
+%Arad, C. and Dowling, J. and Haridi, S.,
+%\newblock Developing, simulating, and deploying peer-to-peer systems using the {Kompics} component model,
+%\newblock \emph{Proc. of ICST'09, 16, 2009, ACM.}
+%
+%\bibitem{king}
+%Gummadi, K.P. and Saroiu, S. and Gribble, S.D.,
+%\newblock King: Estimating latency between arbitrary internet end hosts,
+%\newblock \emph{Proc. of SIGCOMM Workshop'02, 5--18, 2002, ACM.}
+%
+%\bibitem{cyclon}
+%Voulgaris, S. and Gavidia, D. and van Steen, M.,
+%\newblock CYCLON: Inexpensive Membership Management for Unstructured {P2P} Overlays,
+%\newblock \emph{Journal of Network and Systems Management, 13(2), 197--217, 2005, Springer.}
+%
+%\bibitem{gozar}
+%Payberah, A.H. and Dowling, J. and Haridi, S.,
+%\newblock Gozar: {NAT}-friendly Peer Sampling with One-Hop Distributed {NAT} Traversal,
+%\newblock \emph{Proc. of DAIS'11, 1--14, 2011, Springer.}
+%
+%\bibitem{croupier}
+%Dowling, J. and Payberah, A.H.,
+%\newblock Shuffling with a {Croupier}: Nat-aware peer-sampling,
+%\newblock \emph{Proc. of ICDCS'12, 102--111, 2012, IEEE.}
+%
+%\bibitem{coolstreaming}
+%Zhang, X. and Liu, J. and Li, B. and Yum, Y.S.P.,
+%\newblock {CoolStreaming/DONet}: a data-driven overlay network for peer-to-peer live media streaming,
+%\newblock \emph{Proc. of INFOCOM'05, 2102--2111, 2005, IEEE.}
+%
+%\bibitem{chunkselection}
+%Zhao, B.Q. and Lui, J. and Chiu, D.M.,
+%\newblock Exploring the optimal chunk selection policy for data-driven {P2P} streaming systems,
+%\newblock \emph{Proc. of P2P'09, 271--280, 2009, IEEE.}
+%
+%\bibitem{carlsson}
+%Carlsson, N. and Eager, D.,
+%\newblock Peer-assisted on-demand streaming of stored media using BitTorrent-like protocols,
+%\newblock \emph{Proc. of NETWORKING'07, 570--581, 2007, Springer.}
+%
+%\bibitem{gradientv}
+%Payberah, A.H. and Dowling, J. and Rahimian, F. and Haridi, S.,
+%\newblock Gradientv: Market-based {P2P} live media streaming on the gradient overlay,
+%\newblock \emph{Proc. of DAIS'10, 212--225, 2010, Springer.}
+%
+%\bibitem{glive}
+%Payberah, A.H. and Dowling, J. and Haridi, S.,
+%\newblock Glive: The gradient overlay as a market maker for mesh-based {P2P} live streaming,
+%\newblock \emph{Proc. of ISPDC'11, 153--162, 2011, IEEE.}
+%
+%\bibitem{sepidar}
+%Payberah, A.H. and Rahimian, F. and Haridi, S. and Dowling, J.,
+%\newblock Sepidar: Incentivized market-based {P2P} live-streaming on the gradient overlay network,
+%\newblock \emph{Proc. of ISM'10, 1--8, 2010, IEEE.}
+%
+%\bibitem{abouvetheclouds}
+%Armbrust, M. and Fox, A. and Griffith, R. and Joseph, A.D. and Katz, R.H. and Konwinski, A. and Lee, G. and Patterson, D.A. and Rabkin, A. and Stoica, I. and Zaharia, M.,
+%\newblock Above the Clouds: A Berkeley View of Cloud Computing,
+%\newblock \emph{EECS Department, University of California, Berkeley, 2009.}
+%
+%\bibitem{cloudcomputing}
+%Wang, L. and Tao, J. and Kunze, M. and Castellanos, A.C. and Kramer, D. and Karl, W.,
+%\newblock Scientific cloud computing: Early definition and experience,
+%\newblock \emph{Proc. of HPCC'08, 825--830, 2008, IEEE.}
+%
+%\bibitem{amazonec2}
+%\newblock Amazon Elastic Compute Cloud ({Amazon EC2}),
+%\newblock \emph{{http://aws.amazon.com/ec2/}, [Online; accessed 20-Nov-2012].}
+%
+%\bibitem{amazons3}
+%\newblock Amazon Simple Storage Service ({Amazon S3}),
+%\newblock \emph{{http://aws.amazon.com/s3/}, [Online; accessed 20-Nov-2012].}
+%
+%\bibitem{treebasedmesh}
+%Biskupski, B. and Schiely, M. and Felber, P. and Meier, R.,
+%\newblock Tree-based analysis of mesh overlays for peer-to-peer streaming,
+%\newblock \emph{Proc. of DAIS'08, 126--139, 2008, Springer.}
+%
+%\bibitem{peersampling}
+%Jelasity, M. and Voulgaris, S. and Guerraoui, R. and Kermarrec, A.M. and Van Steen, M.,
+%\newblock Gossip-based peer sampling,
+%\newblock \emph{ACM Transactions on Computer Systems (TOCS), 25(3), 8--8, 2007, ACM.}
+%
+%\bibitem{Sripanidkulchai}
+%Sripanidkulchai, K. and Ganjam, A. and Maggs, B. and Zhang, H.,
+%\newblock The feasibility of supporting large-scale live streaming applications with dynamic application end-points,
+%\newblock \emph{ACM SIGCOMM Computer Communication Review, 34(4), 107--120, 2004, ACM.}
+%
+%\bibitem{sripanidkulchai2004analysis}
+%Sripanidkulchai, K. and Maggs, B. and Zhang, H.,
+%\newblock An analysis of live streaming workloads on the internet,
+%\newblock \emph{Proc. of IMC'04, 41--54, 2004, ACM.}
+%
+%\bibitem{churn}
+%Stutzbach, D. and Rejaie, R.,
+%\newblock Understanding churn in peer-to-peer networks,
+%\newblock \emph{Proc. of IMC'06, 25(27), 189--202, 2006.}
+%
+%\bibitem{sopcast}
+%Lu, Y. and Fallica, B. and Kuipers, F.A. and Kooij, R.E. and Mieghem, P.V.,
+%\newblock Assessing the quality of experience of {Sopcast},
+%\newblock \emph{International Journal of Internet Protocol Technology, 4(1), 11--23, 2009, Inderscience Publishers.}
+%
+%\bibitem{pplive}
+%Spoto, S. and Gaeta, R. and Grangetto, M. and Sereno, M.,
+%\newblock Analysis of {PPLive} through active and passive measurements,
+%\newblock \emph{Proc. of IPDPS'09, 1--7, 2009, IEEE.}
+%
+%\bibitem{qoe}
+%Fortuna, R. and Leonardi, E. and Mellia, M. and Meo, M. and Traverso, S.,
+%\newblock {QoE} in pull based {P2P-TV} systems: overlay topology design tradeoffs,
+%\newblock \emph{Proc. of P2P'10, 1--10, 2010, IEEE.}
+%
+%\bibitem{gossip++}
+%Frey, D. and Guerraoui, R. and Kermarrec, A.M. and Monod, M.,
+%\newblock Boosting gossip for live streaming,
+%\newblock \emph{Proc. of P2P'10, 1--10, 2010, IEEE.}
+%
+%\bibitem{goel2006data}
+%Goel, S. and Buyya, R.,
+%\newblock Data replication strategies in wide area distributed systems,
+%\newblock \emph{2006, Idea Group Inc., Hershey, PA, USA.}
+%
+%\bibitem{chainsaw}
+%Pai, V. and Kumar, K. and Tamilmani, K. and Sambamurthy, V. and Mohr, A.,
+%\newblock Chainsaw: Eliminating trees from overlay multicast,
+%\newblock \emph{Proc. of IPTPS'05, 127--140, 2005, Springer.}
+%
+%\bibitem{newcoolstreaming}
+%Li, B. and Xie, S. and Qu, Y. and Keung, G.Y. and Lin, C. and Liu, J. and Zhang, X.,
+%\newblock Inside the new {Coolstreaming}: Principles, measurements and performance implications,
+%\newblock \emph{Proc. of INFOCOM'08, 1031--1039, 2008, IEEE.}
+%
+%\bibitem{armbrust2010view}
+%Armbrust, M. and Fox, A. and Griffith, R. and Joseph, A.D. and Katz, R. and Konwinski, A. and Lee, G. and Patterson, D. and Rabkin, A. and Stoica, I. and others,
+%\newblock A view of cloud computing,
+%\newblock \emph{Communications of the ACM, 53(4), 50--58, 2010, ACM.}
+%
+%\bibitem{schay2007introduction}
+%Schay, G.,
+%\newblock Introduction to probability with statistical applications,
+%\newblock \emph{2007, Birkh{\"a}user.}
+%
+%\bibitem{angelcast}
+%Sweha, R. and Ishakian, V. and Bestavros, A.,
+%\newblock {AngelCast}: cloud-based peer-assisted live streaming using optimized multi-tree construction,
+%\newblock \emph{Proc. of MMsys'12, 191--202, 2012, ACM.}
+%
+%\bibitem{budget}
+%Michiardi, P. and Carra, D. and Albanese, F. and Bestavros, A.,
+%\newblock Peer-assisted content distribution on a budget,
+%\newblock \emph{Computer Networks, 56(7), 2038--2048, 2012, Elsevier.}
+%
+%\bibitem{fallica2008quality}
+%Fallica, B. and Lu, Y. and Kuipers, F. and Kooij, R. and Van Mieghem, P.,
+%\newblock On the quality of experience of sopcast,
+%\newblock \emph{Proc. of NGMAST'08, 501--506, 2008, IEEE.}
+%
+%\end{thebibliography}
 
-\bibitem{roverso2012smoothcache}
-Roverso, R. and El-Ansary, S. and Haridi, S.,
-\newblock {SmoothCache}: {HTTP}-Live Streaming Goes Peer-to-Peer,
-\newblock \emph{Proc. of NETWORKING'12, 29--43, 2012, Springer.}
-
-\bibitem{ZhiHui_Lu}
-Lu, Z.H. and Gao, X.H. and Huang, S.J. and Huang, Y.,
-\newblock Scalable and reliable live streaming service through coordinating {CDN} and {P2P},
-\newblock \emph{Proc. of ICPADS'11, 581--588, 2011, IEEE.}
-
-\bibitem{eue}
-Hu, C. and Chen, M. and Xing, C. and Xu, B.,
-\newblock {EUE} principle of resource scheduling for live streaming systems underlying {CDN-P2P} hybrid architecture,
-\newblock \emph{Peer-to-Peer Networking and Applications, 5(4), 1--11, 2012, Springer.}
-
-\bibitem{liveSky}
-Yin, Hao and Liu, Xuening and Zhan, Tongyu and Sekar, Vyas and Qiu, Feng and Lin, Chuang and Zhang, Hui and Li, Bo,
-\newblock Design and deployment of a hybrid {CDN-P2P} system for live video streaming: experiences with {LiveSky},
-\newblock \emph{Proc. of Multimedia'09, 25--34, 2009, ACM.}
-
-\bibitem{self}
-Babaoglu, O. and Jelasity, M.,
-\newblock Self-* properties through gossiping,
-\newblock \emph{Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 366(1881), 3747--3757, 2008, The Royal Society.}
-
-\bibitem{kavalionak:iwsos12}
-Kavalionak, H. and Montresor, A,
-\newblock {P2P} and Cloud: A Marriage of Convenience for Replica Management,
-\newblock \emph{Proc. of IWSOS'12, 60--71, 2012, Springer.}
-
-\bibitem{tman}
-Jelasity, M. and Montresor, A. and Babaoglu, O.,
-\newblock {T-Man}: Gossip-based fast overlay topology construction,
-\newblock \emph{Computer Networks, 53(13), 2321--2339, 2009, Elsevier.}
-
-\bibitem{loop}
-Kephart, J.O. and Chess, D.M.,
-\newblock The vision of autonomic computing,
-\newblock \emph{Computer, 36(1), 41--50, 2003, IEEE.}
-
-\bibitem{gossipestimation}
-Haridasan, M. and van Renesse, R.,
-\newblock Gossip-based distribution estimation in peer-to-peer networks,
-\newblock \emph{Proc. of IPTPS'08, 2008, USENIX.}
-
-\bibitem{adam2}
-Sacha, J. and Napper, J. and Stratan, C. and Pierre, G.,
-\newblock Adam2: Reliable distribution estimation in decentralised environments,
-\newblock \emph{Proc. of ICDCS'10, 697--707, 2010, IEEE.}
-
-\bibitem{mobilecloud}
-Jin, X. and Kwok, Y.,
-\newblock Cloud Assisted {P2P} Media Streaming for Bandwidth Constrained Mobile Subscribers,
-\newblock \emph{Proc. of IPDPS'10, 800--805, 2010, IEEE.}
-
-\bibitem{Kumar2006}
-Kumar, R. and Ross, K.W.,
-\newblock Optimal peer-assisted file distribution: Single and multi-class problems,
-\newblock \emph{Proc. of HOTWEB'06, 2006, IEEE.}
-
-\bibitem{Zhang:scaling}
-Zhang, H. and Wang, J. and Chen, M. and Ramchandran, K.,
-\newblock Scaling peer-to-peer video-on-demand systems using helpers,
-\newblock \emph{Proc. of ICIP'09, 3053--3056, 2009, IEEE.}
-
-\bibitem{Wang:role}
-Wang, J. and Yeo, C. and Prabhakaran, V. and Ramchandran, K.,
-\newblock On the role of helpers in peer-to-peer file download systems: Design, analysis and simulation,
-\newblock \emph{Proc. of IPTPS'07, 2007.}
-
-\bibitem{Wang:enchancing}
-Wang, J. and Ramchandran, K.,
-\newblock Enhancing peer-to-peer live multicast quality using helpers,
-\newblock \emph{Proc. of ICIP'08, 2300--2303, 2008, IEEE.}
-
-\bibitem{MundingerWW08}
-Mundinger, J. and Weber, R. and Weiss, G.,
-\newblock Optimal scheduling of peer-to-peer file dissemination,
-\newblock \emph{Journal of Scheduling, 11(2), 105--120, 2008, Springer.}
-
-\bibitem{HuangKR10},
-Huang, F. and Khan, M. and Ravindran, B.,
-\newblock On minimizing average end-to-end delay in {P2P} live streaming systems,
-\newblock \emph{Principles of Distributed Systems, 459--474, 2010, Springer.}
-
-\bibitem{EzovskiTA09}
-Ezovski, G.M. and Tang, A. and Andrew, L.L.H.,
-\newblock Minimizing average finish time in {P2P} networks,
-\newblock {Proc. of INFOCOM'09, 594--602, 2009, IEEE.}
-
-\bibitem{CloudAngel}
-Sweha, R. and Ishakian, V. and Bestavros, A.,
-\newblock Angels in the cloud: A peer-assisted bulk-synchronous content distribution service,
-\newblock \emph{Proc. of CLOUD'11, 97--104, 2011, IEEE.}
-
-\bibitem{Kumar:MDT}
-Kumar, R. and Ross, K.W.,
-\newblock Peer-assisted file distribution: The minimum distribution time,
-\newblock \emph{Proc. of HOTWEB'06, 1--11, 2006, IEEE.}
-
-\bibitem{cloudmedia}
-Wu, Y. and Wu, C. and Li, B. and Qiu, X. and Lau, F.C.M.,
-\newblock Cloudmedia: When cloud on demand meets video on demand,
-\newblock \emph{Proc. of ICDCS'11, 268--277, 2011, IEEE.}
-
-\bibitem{cloudcast}
-Montresor, A. and Abeni, L.,
-\newblock Cloudy Weather for {P2P}, with a Chance of Gossip,
-\newblock \emph{Proc. of P2P'11, 250--259, 2011, IEEE.}
-
-\bibitem{challenge}
-Yiu, W.P.K. and Jin, X. and Chan, S.H.G.,
-\newblock Challenges and approaches in large-scale {P2P} media streaming,
-\newblock \emph{MultiMedia, 14(2), 50--59, 2007, IEEE.}
-
-\bibitem{aggregation},
-Jelasity, M. and Montresor, A. and Babaoglu, O.,
-\newblock Gossip-based aggregation in large dynamic networks,
-\newblock \emph{ACM Transactions on Computer Systems (TOCS), 23(3), 219--252, 2005, ACM.}
-
-\bibitem{p2p2009}
-Montresor, A. and Ghodsi, A.,
-\newblock Towards robust peer counting,
-\newblock \emph{Proc. of P2P'09, 143--146, 2009, IEEE.}
-
-\bibitem{kompics}
-Arad, C. and Dowling, J. and Haridi, S.,
-\newblock Developing, simulating, and deploying peer-to-peer systems using the {Kompics} component model,
-\newblock \emph{Proc. of ICST'09, 16, 2009, ACM.}
-
-\bibitem{king}
-Gummadi, K.P. and Saroiu, S. and Gribble, S.D.,
-\newblock King: Estimating latency between arbitrary internet end hosts,
-\newblock \emph{Proc. of SIGCOMM Workshop'02, 5--18, 2002, ACM.}
-
-\bibitem{cyclon}
-Voulgaris, S. and Gavidia, D. and van Steen, M.,
-\newblock CYCLON: Inexpensive Membership Management for Unstructured {P2P} Overlays,
-\newblock \emph{Journal of Network and Systems Management, 13(2), 197--217, 2005, Springer.}
-
-\bibitem{gozar}
-Payberah, A.H. and Dowling, J. and Haridi, S.,
-\newblock Gozar: {NAT}-friendly Peer Sampling with One-Hop Distributed {NAT} Traversal,
-\newblock \emph{Proc. of DAIS'11, 1--14, 2011, Springer.}
-
-\bibitem{croupier}
-Dowling, J. and Payberah, A.H.,
-\newblock Shuffling with a {Croupier}: Nat-aware peer-sampling,
-\newblock \emph{Proc. of ICDCS'12, 102--111, 2012, IEEE.}
-
-\bibitem{coolstreaming}
-Zhang, X. and Liu, J. and Li, B. and Yum, Y.S.P.,
-\newblock {CoolStreaming/DONet}: a data-driven overlay network for peer-to-peer live media streaming,
-\newblock \emph{Proc. of INFOCOM'05, 2102--2111, 2005, IEEE.}
-
-\bibitem{chunkselection}
-Zhao, B.Q. and Lui, J. and Chiu, D.M.,
-\newblock Exploring the optimal chunk selection policy for data-driven {P2P} streaming systems,
-\newblock \emph{Proc. of P2P'09, 271--280, 2009, IEEE.}
-
-\bibitem{carlsson}
-Carlsson, N. and Eager, D.,
-\newblock Peer-assisted on-demand streaming of stored media using BitTorrent-like protocols,
-\newblock \emph{Proc. of NETWORKING'07, 570--581, 2007, Springer.}
-
-\bibitem{gradientv}
-Payberah, A.H. and Dowling, J. and Rahimian, F. and Haridi, S.,
-\newblock Gradientv: Market-based {P2P} live media streaming on the gradient overlay,
-\newblock \emph{Proc. of DAIS'10, 212--225, 2010, Springer.}
-
-\bibitem{glive}
-Payberah, A.H. and Dowling, J. and Haridi, S.,
-\newblock Glive: The gradient overlay as a market maker for mesh-based {P2P} live streaming,
-\newblock \emph{Proc. of ISPDC'11, 153--162, 2011, IEEE.}
-
-\bibitem{sepidar}
-Payberah, A.H. and Rahimian, F. and Haridi, S. and Dowling, J.,
-\newblock Sepidar: Incentivized market-based {P2P} live-streaming on the gradient overlay network,
-\newblock \emph{Proc. of ISM'10, 1--8, 2010, IEEE.}
-
-\bibitem{abouvetheclouds}
-Armbrust, M. and Fox, A. and Griffith, R. and Joseph, A.D. and Katz, R.H. and Konwinski, A. and Lee, G. and Patterson, D.A. and Rabkin, A. and Stoica, I. and Zaharia, M.,
-\newblock Above the Clouds: A Berkeley View of Cloud Computing,
-\newblock \emph{EECS Department, University of California, Berkeley, 2009.}
-
-\bibitem{cloudcomputing}
-Wang, L. and Tao, J. and Kunze, M. and Castellanos, A.C. and Kramer, D. and Karl, W.,
-\newblock Scientific cloud computing: Early definition and experience,
-\newblock \emph{Proc. of HPCC'08, 825--830, 2008, IEEE.}
-
-\bibitem{amazonec2}
-\newblock Amazon Elastic Compute Cloud ({Amazon EC2}),
-\newblock \emph{{http://aws.amazon.com/ec2/}, [Online; accessed 20-Nov-2012].}
-
-\bibitem{amazons3}
-\newblock Amazon Simple Storage Service ({Amazon S3}),
-\newblock \emph{{http://aws.amazon.com/s3/}, [Online; accessed 20-Nov-2012].}
-
-\bibitem{treebasedmesh}
-Biskupski, B. and Schiely, M. and Felber, P. and Meier, R.,
-\newblock Tree-based analysis of mesh overlays for peer-to-peer streaming,
-\newblock \emph{Proc. of DAIS'08, 126--139, 2008, Springer.}
-
-\bibitem{peersampling}
-Jelasity, M. and Voulgaris, S. and Guerraoui, R. and Kermarrec, A.M. and Van Steen, M.,
-\newblock Gossip-based peer sampling,
-\newblock \emph{ACM Transactions on Computer Systems (TOCS), 25(3), 8--8, 2007, ACM.}
-
-\bibitem{Sripanidkulchai}
-Sripanidkulchai, K. and Ganjam, A. and Maggs, B. and Zhang, H.,
-\newblock The feasibility of supporting large-scale live streaming applications with dynamic application end-points,
-\newblock \emph{ACM SIGCOMM Computer Communication Review, 34(4), 107--120, 2004, ACM.}
-
-\bibitem{sripanidkulchai2004analysis}
-Sripanidkulchai, K. and Maggs, B. and Zhang, H.,
-\newblock An analysis of live streaming workloads on the internet,
-\newblock \emph{Proc. of IMC'04, 41--54, 2004, ACM.}
-
-\bibitem{churn}
-Stutzbach, D. and Rejaie, R.,
-\newblock Understanding churn in peer-to-peer networks,
-\newblock \emph{Proc. of IMC'06, 25(27), 189--202, 2006.}
-
-\bibitem{sopcast}
-Lu, Y. and Fallica, B. and Kuipers, F.A. and Kooij, R.E. and Mieghem, P.V.,
-\newblock Assessing the quality of experience of {Sopcast},
-\newblock \emph{International Journal of Internet Protocol Technology, 4(1), 11--23, 2009, Inderscience Publishers.}
-
-\bibitem{pplive}
-Spoto, S. and Gaeta, R. and Grangetto, M. and Sereno, M.,
-\newblock Analysis of {PPLive} through active and passive measurements,
-\newblock \emph{Proc. of IPDPS'09, 1--7, 2009, IEEE.}
-
-\bibitem{qoe}
-Fortuna, R. and Leonardi, E. and Mellia, M. and Meo, M. and Traverso, S.,
-\newblock {QoE} in pull based {P2P-TV} systems: overlay topology design tradeoffs,
-\newblock \emph{Proc. of P2P'10, 1--10, 2010, IEEE.}
-
-\bibitem{gossip++}
-Frey, D. and Guerraoui, R. and Kermarrec, A.M. and Monod, M.,
-\newblock Boosting gossip for live streaming,
-\newblock \emph{Proc. of P2P'10, 1--10, 2010, IEEE.}
-
-\bibitem{goel2006data}
-Goel, S. and Buyya, R.,
-\newblock Data replication strategies in wide area distributed systems,
-\newblock \emph{2006, Idea Group Inc., Hershey, PA, USA.}
-
-\bibitem{chainsaw}
-Pai, V. and Kumar, K. and Tamilmani, K. and Sambamurthy, V. and Mohr, A.,
-\newblock Chainsaw: Eliminating trees from overlay multicast,
-\newblock \emph{Proc. of IPTPS'05, 127--140, 2005, Springer.}
-
-\bibitem{newcoolstreaming}
-Li, B. and Xie, S. and Qu, Y. and Keung, G.Y. and Lin, C. and Liu, J. and Zhang, X.,
-\newblock Inside the new {Coolstreaming}: Principles, measurements and performance implications,
-\newblock \emph{Proc. of INFOCOM'08, 1031--1039, 2008, IEEE.}
-
-\bibitem{armbrust2010view}
-Armbrust, M. and Fox, A. and Griffith, R. and Joseph, A.D. and Katz, R. and Konwinski, A. and Lee, G. and Patterson, D. and Rabkin, A. and Stoica, I. and others,
-\newblock A view of cloud computing,
-\newblock \emph{Communications of the ACM, 53(4), 50--58, 2010, ACM.}
-
-\bibitem{schay2007introduction}
-Schay, G.,
-\newblock Introduction to probability with statistical applications,
-\newblock \emph{2007, Birkh{\"a}user.}
-
-\bibitem{angelcast}
-Sweha, R. and Ishakian, V. and Bestavros, A.,
-\newblock {AngelCast}: cloud-based peer-assisted live streaming using optimized multi-tree construction,
-\newblock \emph{Proc. of MMsys'12, 191--202, 2012, ACM.}
-
-\bibitem{budget}
-Michiardi, P. and Carra, D. and Albanese, F. and Bestavros, A.,
-\newblock Peer-assisted content distribution on a budget,
-\newblock \emph{Computer Networks, 56(7), 2038--2048, 2012, Elsevier.}
-
-\bibitem{fallica2008quality}
-Fallica, B. and Lu, Y. and Kuipers, F. and Kooij, R. and Van Mieghem, P.,
-\newblock On the quality of experience of sopcast,
-\newblock \emph{Proc. of NGMAST'08, 501--506, 2008, IEEE.}
-
-\end{thebibliography}
-
+\bibliographystyle{plain}
+\bibliography{clive}
 %\input{appendix}
 
 \end{document}
